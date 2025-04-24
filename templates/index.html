@@ -1,0 +1,22 @@
+<!-- templates/index.html -->
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>无痕 Amazon 搜索</title>
+</head>
+<body>
+  <h1>关键词列表</h1>
+  <ul>
+    {% for kw in keywords %}
+      <li>
+        {{ kw }}
+        <form action="/search" method="post" style="display:inline;">
+          <input type="hidden" name="keyword" value="{{ kw }}">
+          <button type="submit">🔍 无痕搜索</button>
+        </form>
+      </li>
+    {% endfor %}
+  </ul>
+</body>
+</html>
